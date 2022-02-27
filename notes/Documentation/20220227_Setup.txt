@@ -1,0 +1,5 @@
+Installed git-scm on my local windows-10 machine with default config
+Initialized git repository
+    git init
+Made the initial commit
+

@@ -1,0 +1,12 @@
+Goal: build the planned website using react as frontend and firebase as backend
+
+Waypoints:
+  [ ] Create GitHub repo
+  [ ] Get a react/typescript project running
+  [ ] Get an icon library working
+  [ ] Plan a login screen
+  [ ] Implement a login screen
+  [ ] Implement the login (using firebase auth)
+  [ ] Implement the main screen (ui only)
+  [ ] Implement the main screen (with logic)
+  [ ] Plan further
