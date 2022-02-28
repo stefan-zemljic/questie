@@ -1,5 +1,16 @@
-Installed git-scm on my local windows-10 machine with default config
-Initialized git repository
-    git init
-Made the initial commit
+Git
+    Install git-scm on my local windows-10 machine with default config
+    Initialize git repository
+        git init
+    Make the initial commit
+    Creat the git repository: https://github.com/stefan-zemljic/questie.git
+    Push to the repository
+        git remote add origin https://github.com/stefan-zemljic/questie.git
+        git branch -M main
+        git push -u origin main
+
+Node
+    Install node locally on windows-10 with chocolatey, vs-build-tools and python3
+
+
 
