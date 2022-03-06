@@ -1,0 +1,6 @@
+Plan login screen on the tablet (see notes/TabletNotes/20220306_3_Login_Screen.txt)
+Choose login provider: supabase with mail (they offer a wide variety of login methods)
+Implement login screen in the UI with dummy flow
+    How to do this in react?
+        Could create new page, for now I just implement it as a new compontent
+    Component created with dummy flow (commited now)

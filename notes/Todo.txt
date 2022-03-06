@@ -4,9 +4,9 @@ Waypoints:
   [X] Create GitHub repo and connect that
   [X] Get a react/typescript/yarn2 project running
   [X] Get an icon library working (chose react-icons)
-  [ ] Get a component library working (chose charkra)
+  [X] Get a component library working (chose charkra)
   [ ] Implement login
-      [ ] Plan a login screen
+      [X] Plan a login screen
       [ ] Implement a login screen (ui + dummy)
       [ ] Implement the login (using firebase auth)
   [ ] Implement the main screen (ui only)
