@@ -1,0 +1,12 @@
+Install supabase
+    yarn add @supabase/supabase-js
+Setup Registration -> works
+Setup Login -> works
+Setup request email
+    Find a way to get the hash when clicking on the reset link
+        yarn add react-router-dom
+    Split the hash into parts manually
+    Test it, make it work -> it works
+
+// Btw: I wasn't the whole afternoon doing this
+// I've played a boardgame that took 2 hours in the meantime and ate dinner
