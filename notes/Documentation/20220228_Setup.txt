@@ -12,13 +12,13 @@ React / Typescript / Yarn 2
 Execute and test build
     yarn build
     npm install -g serve
-    cd ./build
-    serve
+    serve -s build
 
 Start dev server - works with live reload
     yarn start
 
 [Commit]
+
 
 
 

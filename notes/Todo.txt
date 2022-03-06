@@ -3,7 +3,7 @@ Goal: build the planned website using react as frontend and firebase as backend
 Waypoints:
   [X] Create GitHub repo and connect that
   [X] Get a react/typescript/yarn2 project running
-  [ ] Get an icon library working
+  [X] Get an icon library working
   [ ] Implement login
       [ ] Plan a login screen
       [ ] Implement a login screen (ui + dummy)

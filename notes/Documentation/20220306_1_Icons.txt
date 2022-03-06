@@ -1,0 +1,6 @@
+Search an icon library to use
+    Install react-icons (search icons in react-icons.github.io/react-icons)
+        yarn add react-icons --cached
+    Use a react icon to test it
+
+
