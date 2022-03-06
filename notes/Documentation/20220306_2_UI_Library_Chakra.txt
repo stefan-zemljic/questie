@@ -1,0 +1,8 @@
+Install Chakra
+    Install libraries
+        yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+    Setup Chakra-Component Provider
+        See changes in index.tsx
+    Test component
+        Disabled App.css
+        Replaced some components in App.tsx with chakra compenents -> worked
