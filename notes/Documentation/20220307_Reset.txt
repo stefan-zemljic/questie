@@ -1,0 +1,16 @@
+Reset project and just use yarn, not yarn 2
+    in a new folder
+    yarn create react-app questie --template typescript
+    cd questie
+    yarn add react-icons
+    yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+    yarn add @supabase/supabase-js
+    yarn add react-router-dom
+    delete all files in the root folder of the project and replace them with the
+        files of the root folder of the newly created project
+    delete build folder
+    delete node_modules folder
+    yarn install
+    test website using yarn start -> works
+
+[Commit]

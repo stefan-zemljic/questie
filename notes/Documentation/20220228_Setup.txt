@@ -2,7 +2,7 @@ React / Typescript / Yarn 2
     Install yarn globally
         npm install -g yarn
     Initialize react project
-        yarn create-react-app questie --template typescript
+        yarn create react-app questie --template typescript
         copied content of ./questie to ./
     Set project yarn version to yarn 2
         yarn set version berry

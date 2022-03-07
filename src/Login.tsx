@@ -53,7 +53,7 @@ function Login() {
                    onChange={(e) => setPassword2(e.target.value)}/>
             <Box textColor="#FF3377">{error ?? ''}</Box>
             <Button colorScheme="blue" onClick={async () => {
-                if (password != password2) {
+                if (password !== password2) {
                     setError('Password mismatch')
                     return
                 }
@@ -82,12 +82,12 @@ function Login() {
         </>
     }
 
-    if (state == 1) {
+    if (state === 1) {
         return centerCard(<>Validation mail sent</>);
     }
 
 
-    if (state == 2) {
+    if (state === 2) {
         return centerCard(<Flex flexDir="column" gap="8px">
             <Input placeholder="email" type="email" value={email}
                    onChange={(e) => setEmail(e.target.value)}/>
@@ -104,7 +104,7 @@ function Login() {
         </Flex>);
     }
 
-    if (state == 3) {
+    if (state === 3) {
         return centerCard(<>Sent if mail address was registered</>);
     }
 
@@ -156,7 +156,7 @@ function Login() {
                            onChange={(e) => setPassword2(e.target.value)}/>
                     <Box textColor="#FF3377">{error ?? ''}</Box>
                     <Button colorScheme="blue" onClick={async () => {
-                        if (password != password2) {
+                        if (password !== password2) {
                             setError('Password mismatch');
                             return
                         }

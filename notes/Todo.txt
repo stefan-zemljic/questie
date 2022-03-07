@@ -9,6 +9,8 @@ Waypoints:
       [X] Plan a login screen
       [X] Implement a login screen (ui + dummy)
       [X] Implement the login (using supabase auth)
+  [X] Change project to use yarn (because Vercel isn't working)
+  [ ] Publish project using Vercel
   [ ] Implement the main screen (ui only)
   [ ] Implement the main screen (with logic)
   [ ] Plan further
