@@ -1,5 +1,5 @@
 import {TabPanels, Tabs, Tab, TabList, TabPanel, Box, Button, Center, Link, Flex, Input,} from "@chakra-ui/react";
-import {createClient, Session, User} from "@supabase/supabase-js";
+import {Session, SupabaseClient, User} from "@supabase/supabase-js";
 import {useState} from 'react';
 import {useLocation} from "react-router-dom";
 
@@ -18,20 +18,12 @@ function centerCard(element: JSX.Element) {
     </Center>
 }
 
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZ' +
-    'iI6InZkZXBxdWdibW1wb291cnhham1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDU4NTkxNTgsImV4cCI6MTk' +
-    '2MTQzNTE1OH0.CC3yGw_x9EFX3tLGlMOr9VZePfRmL4L_6X2X_Efpcu4';
-
-const supabaseUrl = 'https://vdepqugbmmpoourxajml.supabase.co';
-
-function Login() {
+function Login(props: {supabaseClient: SupabaseClient, onLoggedIn: (user: User, session: Session) => void}) {
+    const supabase = props.supabaseClient;
     const [state, setState] = useState(0);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
-    const [supabase] = useState(() => createClient(supabaseUrl, supabaseAnonKey));
-    const [user, setUser] = useState<User>();
-    const [session, setSession] = useState<Session>();
     const [error, setError] = useState<string>();
 
     const location = useLocation();
@@ -70,16 +62,6 @@ function Login() {
                 }
             }}>Save Password</Button>
         </Flex>);
-    }
-
-    if (user && session) {
-        return <>
-            Logged in
-            <Button colorScheme="blue" onClick={() => {
-                setUser(undefined);
-                setSession(undefined);
-            }}>Logout</Button>
-        </>
     }
 
     if (state === 1) {
@@ -138,10 +120,11 @@ function Login() {
                         })
                         if (error) {
                             setError(JSON.stringify(error))
-                        } else {
+                        } else if (user && session) {
                             setError(undefined);
-                            setUser(user ?? undefined);
-                            setSession(session ?? undefined);
+                            props.onLoggedIn(user, session);
+                        } else {
+                            setError("Internal Error 127")
                         }
                     }}>Login</Button>
                 </Flex>

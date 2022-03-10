@@ -1,0 +1,3 @@
+Publish website on vercel -> works
+    Adjust supabase config for mail redirection -> works
+    questie.vercel.app
