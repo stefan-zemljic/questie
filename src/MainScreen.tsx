@@ -95,7 +95,7 @@ function buildDatePicker(state: State) {
 
     return <Center pointerEvents="none" position="absolute" left={0} right={0} top={0} bottom={0}>
         <Flex backgroundColor="#E0E0E0" borderRadius="8px" p="8px" gap="8px" direction="row" justifyContent="center"
-              overflowX="auto">
+              overflowX="auto" pointerEvents="auto">
             <Button colorScheme="blue" onClick={() => add(-1, 0)}><FiChevronsLeft/></Button>
             <Button colorScheme="blue" onClick={() => add(0, -1)}><FiChevronLeft/></Button>
             <Button colorScheme="blue" onClick={() => setToToday()}>{formatMonth(firstDate)}</Button>
