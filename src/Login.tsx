@@ -34,8 +34,6 @@ function Login(props: {supabaseClient: SupabaseClient, onLoggedIn: (user: User, 
     ));
     const {'access_token': accessToken} = hash;
 
-    console.log(JSON.stringify(hash));
-
     if (accessToken) {
         return centerCard(<Flex flexDir="column" gap="8px">
             <Box height="4px"/>
