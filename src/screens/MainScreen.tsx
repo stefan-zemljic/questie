@@ -75,7 +75,11 @@ function openDatePicker(state: State, current: Dayjs, onChange: (state: State, d
         },
         buildContent: state => buildDatePicker(
             state.datePicker!.current,
-            date => state.datePicker!.onChange(state, date)
+            date => {
+                state.datePicker!.onChange(state, date)
+                state.dialogs.pop();
+                state.update();
+            }
         ),
     });
     state.datePicker = {

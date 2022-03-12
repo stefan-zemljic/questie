@@ -1,4 +1,4 @@
-import {Box, Button, SimpleGrid} from "@chakra-ui/react";
+import {Button, SimpleGrid} from "@chakra-ui/react";
 import dayjs, {Dayjs} from "dayjs";
 import "dayjs/plugin/weekday";
 
