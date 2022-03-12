@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Login from "./Login";
-import MainScreen from "./MainScreen";
+import Login from "./screens/Login";
+import MainScreen from "./screens/MainScreen";
 import {createClient, Session, User} from "@supabase/supabase-js";
 import {Box} from "@chakra-ui/react";
+import dayjs from "dayjs";
+import "dayjs/plugin/updateLocale";
 
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZ' +
     'iI6InZkZXBxdWdibW1wb291cnhham1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDU4NTkxNTgsImV4cCI6MTk' +
@@ -15,6 +17,10 @@ function App() {
     const [supabase] = useState(() => createClient(supabaseUrl, supabaseAnonKey));
     const [user, setUser] = useState<User>();
     const [session, setSession] = useState<Session>();
+
+    dayjs.extend(require("dayjs/plugin/weekday"));
+    dayjs.extend(require("dayjs/plugin/updateLocale"));
+    dayjs.updateLocale(dayjs().locale(), {weekStart: 1})
 
     if (user && session) {
         return <Box display="relative" w="100vw" h="100vh">
