@@ -10,7 +10,6 @@ function MonthPicker(props: { date: Dayjs, onChange: (date: Dayjs) => void }) {
         let next = firstOfMonth;
         if (years) next = next.add(years, 'y');
         if (months) next = next.add(months, 'M');
-        console.log(next);
         setFirstOfMonth(next);
         props.onChange(next);
     }
@@ -22,13 +21,13 @@ function MonthPicker(props: { date: Dayjs, onChange: (date: Dayjs) => void }) {
     }
 
     return <Flex p="8px" gap="8px" direction="row" justifyContent="center" overflowX="auto" pointerEvents="auto">
-        <Button colorScheme="blue" onClick={() => add(-1, 0)}><FiChevronsLeft/></Button>
-        <Button colorScheme="blue" onClick={() => add(0, -1)}><FiChevronLeft/></Button>
+        <Button flexShrink={0} colorScheme="blue" onClick={() => add(-1, 0)}><FiChevronsLeft/></Button>
+        <Button flexShrink={0} colorScheme="blue" onClick={() => add(0, -1)}><FiChevronLeft/></Button>
         <Box flexGrow={1}/>
-        <Button colorScheme="blue" onClick={() => reset()}>{firstOfMonth.format('MMMM YYYY')}</Button>
+        <Button flexShrink={0} colorScheme="blue" onClick={() => reset()}>{firstOfMonth.format('MMM YYYY')}</Button>
         <Box flexGrow={1}/>
-        <Button colorScheme="blue" onClick={() => add(0, 1)}><FiChevronRight/></Button>
-        <Button colorScheme="blue" onClick={() => add(1, 0)}><FiChevronsRight/></Button>
+        <Button flexShrink={0} colorScheme="blue" onClick={() => add(0, 1)}><FiChevronRight/></Button>
+        <Button flexShrink={0} colorScheme="blue" onClick={() => add(1, 0)}><FiChevronsRight/></Button>
     </Flex>
 }
 

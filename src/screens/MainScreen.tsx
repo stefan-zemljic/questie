@@ -1,13 +1,5 @@
 import {Session, SupabaseClient, User} from "@supabase/supabase-js";
-import {
-    Box,
-    Button,
-    Center,
-    Flex,
-    Modal, ModalBody,
-    ModalContent,
-    ModalOverlay
-} from "@chakra-ui/react";
+import {Box, Button, Center, Flex, Modal, ModalOverlay} from "@chakra-ui/react";
 import {
     AiOutlineCamera,
     AiOutlineCarryOut,
@@ -21,7 +13,7 @@ import {
 } from "react-icons/all";
 import {useState} from "react";
 import dayjs, {Dayjs} from "dayjs";
-import DatePicker from "../components/DatePicker";
+import DatePickerDialog from "../dialogs/DatePickerDialog";
 
 type State = {
     date: Dayjs,
@@ -59,8 +51,8 @@ function MainScreen(props: { supabaseClient: SupabaseClient, user: User, session
 function buildDialogs(state: State) {
     if (!state.dialogs.length) return null;
 
-    return <>{state.dialogs.map(dialog => {
-        return <Modal isOpen={true} onClose={() => state.dialogs.pop()!.onClose(state)}>
+    return <>{state.dialogs.map((dialog, i) => {
+        return <Modal key={i} isOpen={true} onClose={() => state.dialogs.pop()!.onClose(state)}>
             <ModalOverlay/>
             {dialog.buildContent(state)}
         </Modal>
@@ -73,28 +65,19 @@ function openDatePicker(state: State, current: Dayjs, onChange: (state: State, d
             state.datePicker = undefined;
             state.update();
         },
-        buildContent: state => buildDatePicker(
-            state.datePicker!.current,
-            date => {
+        buildContent: state => <DatePickerDialog
+            date={state.datePicker!.current}
+            onChange={date => {
                 state.datePicker!.onChange(state, date)
                 state.dialogs.pop();
                 state.update();
-            }
-        ),
+            }}/>
     });
     state.datePicker = {
         current: current,
         onChange: onChange,
     };
     state.update();
-}
-
-function buildDatePicker(date: Dayjs, onChange: (date: Dayjs) => void) {
-    return <ModalContent>
-        <ModalBody>
-            <DatePicker date={date} onChange={onChange}/>
-        </ModalBody>
-    </ModalContent>
 }
 
 function buildHeader(state: State) {
